@@ -10,13 +10,19 @@ For this exercise, we'd like you to do the following:
 - calculate the total amount `overdue` (pending status, due date in the past) in dollars
 - calculate the total amount `outstanding` (pending status, due date in the future) in dollars.
 
-Please render these values to the screen along with an ordered list of the bills sorted by due date and by category (outstanding, overdue, paid)
+Please render these values to the screen along with an ordered list of the bills sorted by due date and by category (outstanding, overdue, paid).
+
+The final product should look like this:
+
+![Final Product](/public/image.png)
+
+Keep in mind that we're looking to see how you approach writing code and not just for the correct answers.
 
 If you're comfortable, we'd love to see you use [Flow](https://flow.org/en/) to add type annotations to your work, but please don't feel that it's a requirement.
 
-Feel free to use any resources and packages available to you, including [clark-utils](https://github.com/hiclark/clark-utils).
+You're welcome to use any resources and packages, including [clark-utils](https://github.com/hiclark/clark-utils).
 
-When you've finished, please zip your completed challenge and email it back to us (engineering@hiclark.com).
+When you've finished, zip the repo and email it back to us at engineering@hiclark.com.
 
 ## To get started:
 
