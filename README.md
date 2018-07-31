@@ -8,7 +8,7 @@ For this exercise, we'd like you to do the following:
 - calculate the total amount billed in dollars
 - calculate the total amount `paid` in dollars
 - calculate the total amount `overdue` (pending status, due date in the past) in dollars
-- calculate the total amount `outstanding` (pending status, due date in the future) money in dollars.
+- calculate the total amount `outstanding` (pending status, due date in the future) in dollars.
 
 Please render these values to the screen along with an ordered list of the bills sorted by due date and by category (outstanding, overdue, paid)
 
