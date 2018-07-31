@@ -10,24 +10,24 @@ const App = () =>
     </p>
     <p>
       For this exercise, we'd like you to do the following:
-      <ul>
-        <li>
-          calculate the total amount billed in dollars
-        </li>
-        <li>
-          calculate the total amount paid in dollars
-        </li>
-        <li>
-          calculate the total amount overdue (unpaid) in dollars
-        </li>
-        <li>
-          calculate the total amount outstanding (not due yet, not paid yet) money in dollars.
-        </li>
-        <li>
-          render these values to the screen along with an ordered list of the bills sorted by date and by category (outstanding, overdue, paid) - see the attached screenshot for reference.
-        </li>
-      </ul>
     </p>
+    <ul>
+      <li>
+        calculate the total amount billed in dollars
+      </li>
+      <li>
+        calculate the total amount paid in dollars
+      </li>
+      <li>
+        calculate the total amount overdue (unpaid) in dollars
+      </li>
+      <li>
+        calculate the total amount outstanding (not due yet, not paid yet) money in dollars.
+      </li>
+      <li>
+        render these values to the screen along with an ordered list of the bills sorted by date and by category (outstanding, overdue, paid) - see the attached screenshot for reference.
+      </li>
+    </ul>
     <p>
       Please test your work as you see fit, use git commits, and if you're comfortable use Flow to add type annotations.
     </p>
