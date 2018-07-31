@@ -1,20 +1,31 @@
-Welcome to the Clark Take-Home Code Challenge
-Take a look at src/data.js. This is an approximation of what normalized billing data from our API looks like.
+# Clark Take-Home Code Challenge
+
+## Requirements
+Take a look at `src/data.js`. This is an approximation of what normalized billing data from our API looks like.
 
 For this exercise, we'd like you to do the following:
 
-calculate the total amount billed in dollars
-calculate the total amount paid in dollars
-calculate the total amount overdue (unpaid) in dollars
-calculate the total amount outstanding (not due yet, not paid yet) money in dollars.
-render these values to the screen along with an ordered list of the bills sorted by date and by category (outstanding, overdue, paid) - see the attached screenshot for reference.
-Please test your work as you see fit, use git commits, and if you're comfortable use Flow to add type annotations.
+- calculate the total amount billed in dollars
+- calculate the total amount `paid` in dollars
+- calculate the total amount `overdue` (pending status, due date in the past) in dollars
+- calculate the total amount `outstanding` (pending status, due date in the future) money in dollars.
 
-Feel free to use any resources and packages available to you, including clark-utils.
+render these values to the screen along with an ordered list of the bills sorted by due date and by category (outstanding, overdue, paid)
 
-When you've finished, zip your completed challenge and email it back to us.
+If you're comfortable use Flow to add type annotations, but please don't feel that it's a requirement.
 
-To get started, edit src/App.js and save to reload.
+Feel free to use any resources and packages available to you, including [clark-utils](https://github.com/hiclark/clark-utils).
 
-If you have any questions, please reach out!
+When you've finished, please zip your completed challenge and email it back to us (engineering@hiclark.com).
+
+## To get started:
+
+This app was bootstrapped with Create React App. To get things running:
+
+1. clone the project (`git clone https://github.com/hiclark/candidate-test.git`)
+1. install its dependencies (`yarn`)
+1. start the development server (`yarn start`)
+1. edit `src/App.js` and save to reload.
+
+If you have any questions, please reach out to us (engineering@hiclark.com)!
 
