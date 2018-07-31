@@ -22,7 +22,7 @@ If you're comfortable, we'd love to see you use [Flow](https://flow.org/en/) to 
 
 You're welcome to use any resources and packages, including [clark-utils](https://github.com/hiclark/clark-utils).
 
-When you've finished, zip the repo and email it back to us at engineering@hiclark.com.
+When you've finished, [zip](http://osxdaily.com/2012/01/10/how-to-zip-files-in-mac-os-x/) the repo and email it back to us at engineering@hiclark.com.
 
 ## To get started:
 
