@@ -18,7 +18,7 @@ The final product should look like this:
 
 Keep in mind that we're looking to see how you approach writing code and not just for the correct answers.
 
-If you're comfortable, we'd love to see you use [Flow](https://flow.org/en/) to add type annotations to your work, but please don't feel that it's a requirement.
+If you're comfortable, we'd love to see you use [Flow](https://flow.org/en/) to add type annotations to your work, but please don't feel that it's a requirement. Test your type annotations by running `yarn run flow`.
 
 You're welcome to use any resources and packages, including [clark-utils](https://github.com/hiclark/clark-utils).
 
