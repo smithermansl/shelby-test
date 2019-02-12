@@ -2,19 +2,21 @@
 
 import React from 'react';
 import { formatCentsToDollars } from 'clark-utils';
+import { sortByStatusThenDate, updateStatus } from './utils/sort';
 import bills from './data';
 const billArr = Object.values(bills);
+const tings = updateStatus(billArr).sort(sortByStatusThenDate);
 
 const App = () =>
   <div>
     <header>
-      <h1>Let's add some numbers!</h1>
+      <h3>Let's add some numbers!</h3>
     </header>
     <ul>
       {
-        billArr.map(bill => {
+        tings.map(bill => {
           return (
-            <li>{bill.id}:{' '}
+            <li key={bill.id}>{bill.id}:{' '}
             {formatCentsToDollars(bill.amountInCents)},{' '}
             {bill.status},{' '}
             {bill.dueDate}
