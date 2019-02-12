@@ -1,18 +1,28 @@
 // @flow
 
 import React from 'react';
+import { formatCentsToDollars } from 'clark-utils';
+import bills from './data';
+const billArr = Object.values(bills);
 
 const App = () =>
   <div>
     <header>
-      <h1>Welcome to the Clark Take-Home Code Challenge</h1>
+      <h1>Let's add some numbers!</h1>
     </header>
-    <p>
-      To get started, make some changes to this component and then save.
-    </p>
-    <p>
-      The page should reload to reflect your changes!
-    </p>
+    <ul>
+      {
+        billArr.map(bill => {
+          return (
+            <li>{bill.id}:{' '}
+            {formatCentsToDollars(bill.amountInCents)},{' '}
+            {bill.status},{' '}
+            {bill.dueDate}
+            </li>
+          )
+        })
+      }
+    </ul>
   </div>
 
 export default App;
