@@ -3,3 +3,31 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+table {
+  border-collapse: collapse;
+  margin: 50px auto;
+}
+
+table caption {
+  background-color: #ea4900;
+  color: #FFF;
+  padding: 6px 8px;
+}
+
+table th {
+  text-align: left;
+  font-weight: normal;
+  background-color: #ea4900;
+  color: #FFF;
+  padding: 6px 8px;
+}
+
+table td {
+  border: 1px solid #cfcfd7;
+  padding: 6px 8px;
+}
+
+table tr:nth-child(even) td {
+  background-color: #e5f9f9;
+}
