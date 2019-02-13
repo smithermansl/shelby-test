@@ -1,23 +1,11 @@
+// @flow
+
 import { isPastDate } from 'clark-utils';
+import type { BillsType } from './data';
+import type { BillType } from './components/BillList';
+import type { TotalType } from './components/BillingTotals';
 
-export const updateAndCountBilling = billsObj => {
-  const billsArr = Object.values(billsObj);
-  const updated = updateStatus(billsArr).sort(sortByStatusThenDate);
-  const totals = calcTotals(updated);
-  return { updated, totals };
-}
-
-export const updateStatus = arr => {
-  return arr.map(obj => {
-    let copy = {...obj};
-    if (copy.status === 'pending') {
-      copy.status = isPastDate(obj.dueDate) ? 'overdue' : 'outstanding';
-    }
-    return copy;
-  });
-}
-
-export const calcTotals = arr => {
+export const calculateTotals = (arr: BillType[]): TotalType => {
   return arr.reduce((totals, obj) => {
     let { amountInCents, status } = obj;
     totals.total += amountInCents;
@@ -31,11 +19,11 @@ export const calcTotals = arr => {
   });
 }
 
-export const sortByStatusThenDate = (a, b) => {
-  return sortByStatus(a, b) || sortByDate(a, b);
+export const sortByDate = (a: BillType, b: BillType): number => {
+  return new Date(b.dueDate) - new Date(a.dueDate);
 }
 
-const sortByStatus = (a, b) => {
+export const sortByStatus = (a: BillType, b: BillType): number => {
   switch (a.status) {
     case 'outstanding':
       if (b.status === 'outstanding') return 0;
@@ -52,6 +40,29 @@ const sortByStatus = (a, b) => {
   }
 }
 
-const sortByDate = (a, b) => {
-  return new Date(b.dueDate) - new Date(a.dueDate);
+export const sortByStatusThenDate = (a: BillType, b: BillType): number => {
+  return sortByStatus(a, b) || sortByDate(a, b);
+}
+
+export const updateStatus = (arr: BillType[]): BillType[] => {
+  return arr.map(obj => {
+    let copy = {...obj};
+    if (copy.status === 'pending') {
+      copy.status = isPastDate(obj.dueDate) ? 'overdue' : 'outstanding';
+    }
+    return copy;
+  });
+}
+
+type AppStateType = {
+  updatedBills: BillType[],
+  totals: TotalType
+}
+
+export const updateStatusAndCountBills = (billsObj: BillsType): AppStateType => {
+  // temp solution to Object.values treating values as mixed type
+  const billsArr = (Object.values(billsObj): any);
+  const updatedBills = updateStatus(billsArr).sort(sortByStatusThenDate);
+  const totals = calculateTotals(updatedBills);
+  return { updatedBills, totals };
 }
