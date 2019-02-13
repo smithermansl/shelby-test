@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import BillingTotals from './BillingTotals';
 import BillList from './BillList';
-import { updateStatusAndCountBills } from '../myutils';
+import { updateAndCountBills } from '../myutils';
 import type { BillType } from './BillList';
 import type { TotalType } from './BillingTotals';
 import bills from '../data';
@@ -24,7 +24,7 @@ export default class App extends Component<{}, { updatedBills: BillType[], total
   }
 
   componentDidMount() {
-    this.setState(updateStatusAndCountBills(bills));
+    this.setState(updateAndCountBills(bills));
   }
 
   render() {

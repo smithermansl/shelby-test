@@ -40,8 +40,14 @@ export const sortByStatus = (a: BillType, b: BillType): number => {
   }
 }
 
-export const sortByStatusThenDate = (a: BillType, b: BillType): number => {
-  return sortByStatus(a, b) || sortByDate(a, b);
+export const sortByStatusAndDate = (arr: BillType[]): BillType[] => {
+  return arr.sort(sortWithTwoFns(sortByStatus, sortByDate));
+}
+
+export const sortWithTwoFns =
+  (f1: (a: BillType, b: BillType) => number, f2: (a: BillType, b: BillType) => number) => {
+    // f1 takes precedence over f2
+    return (a: BillType, b: BillType) => f1(a, b) || f2(a, b);
 }
 
 export const updateStatus = (arr: BillType[]): BillType[] => {
@@ -59,10 +65,9 @@ type AppStateType = {
   totals: TotalType
 }
 
-export const updateStatusAndCountBills = (billsObj: BillsType): AppStateType => {
-  // temp solution to Object.values treating values as mixed type
-  const billsArr = (Object.values(billsObj): any);
-  const updatedBills = updateStatus(billsArr).sort(sortByStatusThenDate);
+export const updateAndCountBills = (billsObj: BillsType): AppStateType => {
+  // using `any` is temp solution, Object.values is treating output vals as `mixed` type
+  const updatedBills = sortByStatusAndDate(updateStatus((Object.values(billsObj): any)));
   const totals = calculateTotals(updatedBills);
   return { updatedBills, totals };
 }
