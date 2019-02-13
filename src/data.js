@@ -2,14 +2,14 @@
 
 type StatusType = 'pending' | 'paid';
 
-type BillType = {
+export type BillType = {
   id: string,
   dueDate: string,
   amountInCents: number,
   status: StatusType,
 };
 
-type BillsType = {
+export type BillsType = {
   [id: string]: BillType,
 };
 

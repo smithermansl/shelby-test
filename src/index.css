@@ -12,7 +12,7 @@ table {
 table caption {
   background-color: #ea4900;
   color: #FFF;
-  padding: 6px 8px;
+  padding: 6px 10px;
 }
 
 table th {
@@ -20,12 +20,12 @@ table th {
   font-weight: normal;
   background-color: #ea4900;
   color: #FFF;
-  padding: 6px 8px;
+  padding: 6px 10px;
 }
 
 table td {
   border: 1px solid #cfcfd7;
-  padding: 6px 8px;
+  padding: 6px 10px;
 }
 
 table tr:nth-child(even) td {

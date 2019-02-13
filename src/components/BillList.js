@@ -1,7 +1,18 @@
+// @flow
+
 import React from 'react';
 import { formatCentsToDollars } from 'clark-utils';
 
-const BillList = ({ bills }) => {
+export type BillType = {
+  id: string,
+  amountInCents: number,
+  status: 'paid' | 'overdue' | 'outstanding',
+  dueDate: string
+}
+
+type BillListProps = { bills: BillType[] }
+
+const BillList = ({ bills }: BillListProps) => {
   return (
     <table id="list">
       <thead>
@@ -28,6 +39,15 @@ const BillList = ({ bills }) => {
       </tbody>
     </table>
   );
+}
+
+BillList.defaultProps = {
+  bills: [{
+    id: ' ',
+    amountInCents: 0,
+    status: 'outstanding',
+    dueDate: ' '
+  }]
 }
 
 export default BillList;
