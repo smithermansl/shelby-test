@@ -1,6 +1,7 @@
 {
   "name": "clark-take-home",
   "version": "0.1.0",
+  "author": "Shelby Smitherman <smithermansl@gmail.com",
   "private": true,
   "dependencies": {
     "clark-utils": "^0.12.1",
